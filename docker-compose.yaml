@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres:12-alpine
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - ~/docker-volume/pg-greenlight:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
